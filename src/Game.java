@@ -1,5 +1,5 @@
 import java.util.Scanner;
-    public class Spil {
+    public class Game {
         public static void main(String[] args) {
             Scanner in = new Scanner(System.in);
             Player Player_1 = new Player(1, "bob");
