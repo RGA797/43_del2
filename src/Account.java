@@ -1,5 +1,5 @@
 public class Account {
-    int totalBalance;
+    int totalBalance = 0;
     int balanceToWin = 3000;
     int change;
 
@@ -9,5 +9,16 @@ public class Account {
     }
     public void changeBalance(int change){
         totalBalance = totalBalance + change;
+    }
+    public int getTotalBalance(){
+        return totalBalance;
+    }
+    public boolean winCondition(){
+        if(totalBalance >= balanceToWin){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
