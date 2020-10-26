@@ -22,16 +22,16 @@ public class Game {
                     break;
                 case playerType = 2:
                     System.out.println("write your name");
-                    playername1 = in.nextLine();
-                    System.out.println("Write player 1's name");
                     playername2 = in.nextLine();
+                    System.out.println("Write player 1's name");
+                    playername1 = in.nextLine();
                     break;
             }
 
             int playerType = in.nextInt();
             System.out.println("What is" +  " "+playerType+'s' + " name?" );
             if (playerType = 1){
-                String playername1 = in.nextLine()
+                String playername1 = in.nextLine();
             }
             if (playerType = 2){
 
