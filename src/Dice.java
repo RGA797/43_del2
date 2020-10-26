@@ -30,10 +30,10 @@ public class Dice {
         int roll1 = rollDice();
         int roll2 = rollDice();
 
-        int rollTotal = roll1 + roll2;
+        /*int rollTotal = roll1 + roll2;
 
-        System.out.println("1 total roll: " + rollTotal);
+        System.out.println("1 total roll: " + rollTotal);*/
 
-        return rollTotal;
+        return roll1 + roll2;
     }
 }

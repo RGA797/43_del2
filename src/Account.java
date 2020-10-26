@@ -23,12 +23,12 @@ public class Account {
         return totalBalance >= balanceToWin;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         Account w = new Account(1000,3000);
 
         w.settotalBalance(BalanceChange.Change());
 
         System.out.println(Account.getTotalBalance());
-    }
+    }*/
 }
