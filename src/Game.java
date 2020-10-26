@@ -14,32 +14,21 @@ public class Game {
             String playername1;
             String playername2;
             switch (playerType){
-                case playerType = 1:
+                case 1:
                     System.out.println("write your name");
                     playername1 = in.nextLine();
                     System.out.println("Write player 2's name");
                     playername2 = in.nextLine();
                     break;
-                case playerType = 2:
+                case 2:
                     System.out.println("write your name");
                     playername2 = in.nextLine();
                     System.out.println("Write player 1's name");
                     playername1 = in.nextLine();
                     break;
             }
-
-            int playerType = in.nextInt();
-            System.out.println("What is" +  " "+playerType+'s' + " name?" );
-            if (playerType = 1){
-                String playername1 = in.nextLine();
-            }
-            if (playerType = 2){
-
-            }
-            String playerName = in.nextLine();
-
-            Player player1 = new Player(playerType,playerName);
-
+            Player player1 = new Player(1,playername1);
+            Player player2 = new Player(2,playername2);
 
         }
     }
