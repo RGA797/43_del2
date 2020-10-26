@@ -11,8 +11,8 @@ public class Game {
             Board piece2 = new Board();
             System.out.println("Are you player 1 or player 2?");
             int playerType = in.nextInt();
-            String playername1;
-            String playername2;
+            String playername1 = "";
+            String playername2 = "";
             switch (playerType) {
                 case 1 -> {
                     System.out.println("write your name");
@@ -32,11 +32,22 @@ public class Game {
 
             while ((!account1.winCondition()) && (!account2.winCondition())) {
                 int i = 0;
-                if (i < 1000) {
-                    int change = Dice.diceTotal();
-                    System.out.println();
-                    i++;
+                int change = Dice.diceTotal();
+
+                System.out.println();
+                i++;
+
+                System.out.println("You rolled " + change + ", you land on field number " + piece1.ChangeBoardPosition(change) + ", on " + piece1.GetFieldName());
+
+                account1.changeBalance(piece1.GetFieldChange());
+
+                System.out.print(" and your balance is " + account1.getTotalBalance());
+
+                if (i > 100) {
+
+                    System.exit(0);
                 }
             }
+
         }
     }
