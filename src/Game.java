@@ -14,8 +14,6 @@ public class Game {
 
             String playerName = in.nextLine();
 
-
-
             Player player1 = new Player(playerType,playerName);
 
 
