@@ -13,22 +13,23 @@ public class Game {
             int playerType = in.nextInt();
             String playername1;
             String playername2;
-            switch (playerType){
-                case 1:
+            switch (playerType) {
+                case 1 -> {
                     System.out.println("write your name");
                     playername1 = in.nextLine();
                     System.out.println("Write player 2's name");
                     playername2 = in.nextLine();
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.println("write your name");
                     playername2 = in.nextLine();
                     System.out.println("Write player 1's name");
                     playername1 = in.nextLine();
-                    break;
+                }
             }
             Player player1 = new Player(1,playername1);
             Player player2 = new Player(2,playername2);
+
 
         }
     }
