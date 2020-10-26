@@ -1,8 +1,9 @@
+
 public class Board {
 
     static int boardPosition;
 
-    public static int BoardField() {
+    public static int BoardField(int diceType) {
 
         int fieldmax = 12;
 
@@ -10,7 +11,7 @@ public class Board {
 
         Board Position = new Board();
 
-        Position.setboardPosition(Dice.diceTotal() + getboardPosition());
+        Position.setboardPosition(diceType + getboardPosition());
 
         while (getboardPosition() > fieldmax) {
 
@@ -30,6 +31,8 @@ public class Board {
 
         return boardPosition;
     }
+
+
 
     public static String FieldName() {
 
@@ -53,5 +56,5 @@ public class Board {
 
         return currentfield;
     }
-
 }
+

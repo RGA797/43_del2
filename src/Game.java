@@ -10,5 +10,7 @@ import java.util.Scanner;
             Player_1.setPlayerPosition(4);
             // Get player position (help function for board)
             System.out.println(Player_1.getPlayerPosition());
+
         }
+
     }
