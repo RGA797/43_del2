@@ -15,15 +15,15 @@ public class Game {
             String playername2;
             switch (playerType){
                 case playerType = 1:
-                    System.out.println("skriv dit navn");
+                    System.out.println("write your name");
                     playername1 = in.nextLine();
-                    System.out.println("Write player2's name");
+                    System.out.println("Write player 2's name");
                     playername2 = in.nextLine();
                     break;
                 case playerType = 2:
-                    System.out.println("Write player 2's name");
+                    System.out.println("write your name");
                     playername1 = in.nextLine();
-                    System.out.println("Write player 1 name");
+                    System.out.println("Write player 1's name");
                     playername2 = in.nextLine();
                     break;
             }
