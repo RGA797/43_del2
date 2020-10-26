@@ -1,4 +1,11 @@
 public class Player {
+    // Player object, this is set when the game starts.
+    public Player(int playerType, String playerName) {
+        this.playerType = playerType;
+        this.playerName = playerName;
+        this.playerPosition = 2;
+    }
+
     // User choses player type (player 1/player 2)
     int playerType;
     String playerName;
@@ -9,14 +16,6 @@ public class Player {
     public int playerCount() {
         return 2;
     }
-
-    // Player object, this is set when the game starts.
-    public Player(int playerType, String playerName) {
-        this.playerType = playerType;
-        this.playerName = playerName;
-        this.playerPosition = 2;
-    }
-
     public String getPlayerName() {
         return playerName;
     }

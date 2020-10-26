@@ -1,60 +1,32 @@
 
 public class Board {
-
-    static int boardPosition;
-
-    public static int BoardField(int diceType) {
-
-        int fieldmax = 12;
-
-        int fieldreset = 11;
-
-        Board Position = new Board();
-
-        Position.setboardPosition(diceType + getboardPosition());
-
-        while (getboardPosition() > fieldmax) {
-
-            Position.setboardPosition(boardPosition - fieldreset);
-        }
-
-        return getboardPosition();
-
+    int arrayadaptor = 2;
+    int boardPosition;
+    public Board(){
+        this.boardPosition = 0;
     }
-
-    private void setboardPosition(int boardPosition) {
-
-        this.boardPosition = boardPosition;
+    public void setboardPosition(int position) {
+        boardPosition = position;
     }
-
-    public static int getboardPosition() {
-
+    public int getboardPosition() {
         return boardPosition;
     }
-
-
-
-    public static String FieldName() {
-
-        int arrayadaptor = 2;
-
-        String[] FieldNameList = new String[11];
-
-        FieldNameList[0] = "Tower";
-        FieldNameList[1] = "Crater";
-        FieldNameList[2] = "Palace gates";
-        FieldNameList[3] = "Cold Desert";
-        FieldNameList[4] = "Walled city";
-        FieldNameList[5] = "Monastery";
-        FieldNameList[6] = "Black cave";
-        FieldNameList[7] = "Huts in the mountain";
-        FieldNameList[8] = "The Werewall";
-        FieldNameList[9] = "The pit";
-        FieldNameList[10] = "Goldmine";
-
-        String currentfield = FieldNameList[Board.getboardPosition() - arrayadaptor];
-
-        return currentfield;
+    public int ChangeBoardPosition(int dicetotal) {
+        int fieldmax = 12;
+        int fieldreset = 11;
+        setboardPosition(dicetotal + getboardPosition());
+        while (getboardPosition() > fieldmax) {
+            setboardPosition(boardPosition - fieldreset);
+        }
+        return getboardPosition();
+    }
+    public String GetFieldName() {
+        final String[] fieldNameList = new String[]{"Tower","Crater", "Palace gates", "Cold Desert", "Walled city", "Monastery", "Black cave", "Huts in the mountain", "The Werewall", "The pit", "Goldmine"};
+        return fieldNameList[getboardPosition() - arrayadaptor];
+    }
+    public int GetFieldChange() {
+        final int[] BalanceList = new int[]{250,-100,-20,180,0,-70,60,-80,-50,650};
+        return BalanceList[getboardPosition() - arrayadaptor];
     }
 }
 
