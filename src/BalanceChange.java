@@ -19,8 +19,8 @@ public class BalanceChange {
         BalanceList[9] = - 50;
         BalanceList[10] = 650;
 
-        int turnbalance = BalanceList[Board.getboardPosition() - arrayadaptor];
+        int change = BalanceList[Board.getboardPosition() - arrayadaptor];
 
-        return turnbalance;
+        return change;
     }
 }

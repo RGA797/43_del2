@@ -1,14 +1,14 @@
 
 public class Account {
-    static int totalBalance;
-    static int balanceToWin;
+    static int totalBalance = 1000;
+    int balanceToWin;
     static int change;
 
     public Account(int totalBalance, int balanceToWin){
         this.totalBalance = 1000;
         this.balanceToWin = 3000;
     }
-     public void changeBalance(int change){
+     public static void changeBalance(int change){
         totalBalance = totalBalance + change;
     }
 
@@ -23,12 +23,5 @@ public class Account {
         return totalBalance >= balanceToWin;
     }
 
-    /*public static void main(String[] args) {
 
-        Account w = new Account(1000,3000);
-
-        w.settotalBalance(BalanceChange.Change());
-
-        System.out.println(Account.getTotalBalance());
-    }*/
 }
