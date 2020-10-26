@@ -4,6 +4,13 @@ public class Account {
     int balanceToWin;
     static int change;
 
+    public static int updateBalance() {
+
+        changeBalance(BalanceChange.Change());
+
+        return getTotalBalance();
+    }
+
     public Account(int totalBalance, int balanceToWin){
         this.totalBalance = 1000;
         this.balanceToWin = 3000;
