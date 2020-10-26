@@ -30,13 +30,13 @@ public class Game {
             Player player1 = new Player(1,playername1);
             Player player2 = new Player(2,playername2);
 
-            while ((!account1.winCondition()) && (!account2.winCondition())){
+            while ((!account1.winCondition()) && (!account2.winCondition())) {
                 int i = 0;
-                int change = Dice.diceTotal();
-
-                System.out.println();
-                i++
+                if (i < 1000) {
+                    int change = Dice.diceTotal();
+                    System.out.println();
+                    i++;
+                }
             }
-
         }
     }
