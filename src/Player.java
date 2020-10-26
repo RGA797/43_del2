@@ -27,12 +27,12 @@ public class Player {
     }
 
     // Set a players position, default is 2 when the game starts.
-    public void setPlayerPosition(int pos) {
+    /*public void setPlayerPosition(int pos) {
         playerPosition = pos;
     }
 
     // Get player position (help function for board)
     public int getPlayerPosition() {
         return playerPosition;
-    }
+    }*/
 }

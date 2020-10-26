@@ -8,6 +8,10 @@ public class Account {
     }
     public void changeBalance(int change){
         totalBalance = totalBalance + change;
+
+        if (totalBalance < 0) {
+            totalBalance = 0;
+        }
     }
     public int getTotalBalance(){
         return totalBalance;
