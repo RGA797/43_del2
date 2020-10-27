@@ -1,6 +1,6 @@
-public class Test {
+//public class Test {
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 
        // for (int i = 1; i < 10; i++) {
 
@@ -12,7 +12,3 @@ public class Test {
 
             //System.out.println("Total balance: " + Account.updateBalance());
 
-        }
-    }
-
-}
