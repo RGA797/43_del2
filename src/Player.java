@@ -26,6 +26,11 @@ public class Player {
         return playerName;
     }
 
+    public void setPlayerName(String newName) {
+        playerName = newName;
+    }
+
+
     // Set a players position, default is 2 when the game starts.
     /*public void setPlayerPosition(int pos) {
         playerPosition = pos;

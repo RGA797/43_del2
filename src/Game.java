@@ -8,32 +8,24 @@ public class Game {
         Account account2 = new Account();
         Board piece1 = new Board();
         Board piece2 = new Board();
+        Player player1 = new Player(1, playername1);
+        Player player2 = new Player(2, playername2);
+        int i = 1;
+
         System.out.println("Are you player 1 or player 2?");
         int playerType = in.nextInt();
         switch (playerType) {
             case 1 -> {
-                System.out.println("Write your name");
-                playername1 = in.nextLine();
-                in.nextLine(); //consume newline left-over
-                System.out.println("Write player 2's name");
-                playername2 = in.nextLine();
+                namePlayer(player1,player2);
             }
             case 2 -> {
-                System.out.println("Write your name");
-                playername2 = in.nextLine();
-                in.nextLine(); //consume newline left-over
-                System.out.println("Write player 1's name");
-                playername1 = in.nextLine();
+                namePlayer(player2, player1);
             }
         }
 
-        Player player1 = new Player(1, playername1);
-        Player player2 = new Player(2, playername2);
-
-        int i = 1;
 
         while ((!account1.winCondition()) && (!account2.winCondition())) {
-            if (i < 1000) {
+            if (i < 100) {
                 if (i % 2 == 1) {
 
                     playTurn(account1, piece1, player1);
@@ -56,17 +48,16 @@ public class Game {
         }
         System.out.println("Play again?");
         if (in.nextLine().
-                equals("Yes"))
+                equals("yes"))
             //restart game?
             System.exit(0);
         }
 
     private static void playTurn(Account account, Board piece, Player player) {
-
         //player turn
-        System.out.println("Player" + "" + player.playerType + "'s" + "turn");
+        System.out.println(player.getPlayerName() + "'s turn");
         piece.ChangeBoardPosition(Dice.diceTotal());
-        System.out.println("Landed on " + piece.GetFieldName() + " giving" + "" + piece.GetFieldChange());
+        System.out.println("Landed on " + piece.GetFieldName() + " giving " + "" + piece.GetFieldChange());
         account.changeBalance(piece.GetFieldChange());
         while (piece.getboardPosition() == 10) {
             System.out.println("Current money on werewall: " + "" + account.getTotalBalance());
@@ -82,4 +73,14 @@ public class Game {
         System.out.println("Turn ended with: " + "" + account.getTotalBalance());
         System.out.println(" ");
     }
+    private static void namePlayer(Player playerNumber1, Player playerNumber2) {
+
+        System.out.println("Write your name");
+        in.nextLine(); //consume newline left-over
+        playerNumber1.setPlayerName(in.nextLine());
+        System.out.println("Write player 2's name");
+        playerNumber2.setPlayerName(in.nextLine());
+
+    }
 }
+
