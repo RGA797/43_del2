@@ -35,44 +35,11 @@ public class Game {
         while ((!account1.winCondition()) && (!account2.winCondition())) {
             if (i < 1000) {
                 if (i % 2 == 1) {
-                    //player1turn
-                    System.out.println("Player" + "" + player1.playerType + "'s" + "turn");
-                    piece1.ChangeBoardPosition(Dice.diceTotal());
-                    System.out.println("Landed on " + piece1.GetFieldName() + " giving " + "" + piece1.GetFieldChange());
-                    account1.changeBalance(piece1.GetFieldChange());
-                    while (piece1.getboardPosition() == 10) {
-                        System.out.println("Current money on werewall: " + "" + account1.getTotalBalance());
-                        System.out.println("Rolling again..");
-                        System.out.println(" ");
-                        //rolling
-                        piece1.ChangeBoardPosition(Dice.diceTotal());
-                        account1.changeBalance(piece1.GetFieldChange());
-                        if (piece1.getboardPosition() != 10) {
-                            System.out.println("Landed on " + piece1.GetFieldName() + " giving " + "" + piece1.GetFieldChange());
-                        }
-                    }
-                    System.out.println("Turn ended with: " + "" + account1.getTotalBalance());
-                    System.out.println(" ");
+
+                    playTurn(account1, piece1, player1);
                 }
-                if (i % 2 == 0) {
-                    //player2turn
-                    System.out.println("Player" + "" + player2.playerType + "'s" + "turn");
-                    piece2.ChangeBoardPosition(Dice.diceTotal());
-                    System.out.println("Landed on " + piece2.GetFieldName() + " giving" + "" + piece2.GetFieldChange());
-                    account2.changeBalance(piece2.GetFieldChange());
-                    while (piece2.getboardPosition() == 10) {
-                        System.out.println("Current money on werewall: " + "" + account2.getTotalBalance());
-                        System.out.println("Rolling again..");
-                        System.out.println(" ");
-                        //rolling
-                        piece2.ChangeBoardPosition(Dice.diceTotal());
-                        account2.changeBalance(piece2.GetFieldChange());
-                        if (piece2.getboardPosition() != 10) {
-                            System.out.println("Landed on " + piece2.GetFieldName() + " giving" + "" + piece2.GetFieldChange());
-                        }
-                    }
-                    System.out.println("Turn ended with: " + "" + account2.getTotalBalance());
-                    System.out.println(" ");
+                else {
+                    playTurn(account2, piece2, player2);
                 }
             }
             if (account2.winCondition()) {
@@ -92,5 +59,27 @@ public class Game {
                 equals("Yes"))
             //restart game?
             System.exit(0);
+        }
+
+    private static void playTurn(Account account, Board piece, Player player) {
+
+        //player turn
+        System.out.println("Player" + "" + player.playerType + "'s" + "turn");
+        piece.ChangeBoardPosition(Dice.diceTotal());
+        System.out.println("Landed on " + piece.GetFieldName() + " giving" + "" + piece.GetFieldChange());
+        account.changeBalance(piece.GetFieldChange());
+        while (piece.getboardPosition() == 10) {
+            System.out.println("Current money on werewall: " + "" + account.getTotalBalance());
+            System.out.println("Rolling again..");
+            System.out.println(" ");
+            //rolling
+            piece.ChangeBoardPosition(Dice.diceTotal());
+            account.changeBalance(piece.GetFieldChange());
+            if (piece.getboardPosition() != 10) {
+                System.out.println("Landed on " + piece.GetFieldName() + " giving" + "" + piece.GetFieldChange());
+            }
+        }
+        System.out.println("Turn ended with: " + "" + account.getTotalBalance());
+        System.out.println(" ");
     }
 }
