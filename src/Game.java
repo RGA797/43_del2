@@ -23,7 +23,6 @@ public class Game {
             }
         }
 
-
         while ((!account1.winCondition()) && (!account2.winCondition())) {
             if (i < 100) {
                 if (i % 2 == 1) {
@@ -56,7 +55,9 @@ public class Game {
     private static void playTurn(Account account, Board piece, Player player) {
         //player turn
         System.out.println(player.getPlayerName() + "'s turn");
-        piece.ChangeBoardPosition(Dice.diceTotal());
+        int eyesum = Dice.diceTotal();
+        piece.ChangeBoardPosition(eyesum);
+        System.out.println("rolled " + "" + eyesum);
         System.out.println("Landed on " + piece.GetFieldName() + " giving " + "" + piece.GetFieldChange());
         account.changeBalance(piece.GetFieldChange());
         while (piece.getboardPosition() == 10) {
@@ -64,7 +65,7 @@ public class Game {
             System.out.println("Rolling again..");
             System.out.println(" ");
             //rolling
-            piece.ChangeBoardPosition(Dice.diceTotal());
+            piece.ChangeBoardPosition(eyesum);
             account.changeBalance(piece.GetFieldChange());
             if (piece.getboardPosition() != 10) {
                 System.out.println("Landed on " + piece.GetFieldName() + " giving " + "" + piece.GetFieldChange());
