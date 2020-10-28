@@ -48,7 +48,7 @@ public class Game {
         }
         System.out.println("Play again?");
         if (in.nextLine().
-                equals("yes"))
+                equals("Yes"))
             //restart game?
             System.exit(0);
         }
@@ -67,16 +67,16 @@ public class Game {
             piece.ChangeBoardPosition(Dice.diceTotal());
             account.changeBalance(piece.GetFieldChange());
             if (piece.getboardPosition() != 10) {
-                System.out.println("Landed on " + piece.GetFieldName() + " giving" + "" + piece.GetFieldChange());
+                System.out.println("Landed on " + piece.GetFieldName() + " giving " + "" + piece.GetFieldChange());
             }
         }
         System.out.println("Turn ended with: " + "" + account.getTotalBalance());
         System.out.println(" ");
     }
     private static void namePlayer(Player playerNumber1, Player playerNumber2) {
+        Scanner in = new Scanner(System.in);
 
         System.out.println("Write your name");
-        in.nextLine(); //consume newline left-over
         playerNumber1.setPlayerName(in.nextLine());
         System.out.println("Write player 2's name");
         playerNumber2.setPlayerName(in.nextLine());
