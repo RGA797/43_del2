@@ -73,14 +73,18 @@ public class Game {
         System.out.println("Turn ended with: " + "" + account.getTotalBalance());
         System.out.println(" ");
     }
-    private static void namePlayer(Player playerNumber1, Player playerNumber2) {
+    private static void namePlayer(Player first, Player last) {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Write your name");
-        playerNumber1.setPlayerName(in.nextLine());
-        System.out.println("Write player 2's name");
-        playerNumber2.setPlayerName(in.nextLine());
-
+        first.setPlayerName(in.nextLine());
+        if (first.playerType == 2){
+        System.out.println("Write player1's name");
+        }
+        if (first.playerType == 1){
+            System.out.println("Write player2's name");
+        }
+        last.setPlayerName(in.nextLine());
     }
 }
 
