@@ -1,6 +1,8 @@
 
 public class Dice {
 
+    int DiceTotal;
+
     /*public static int[] RollDicePlayer1() {
         //Method that returns an array with 2 random numbers between 1 and 6. (Player 1)
         int[] Player1Dice = new int[2];
@@ -18,6 +20,16 @@ public class Dice {
         return Player1Dice;
     }*/
 
+    public void setDiceTotal(int dicetotal) {
+
+        DiceTotal = dicetotal;
+    }
+
+    public int getDiceTotal() {
+
+        return DiceTotal;
+    }
+
 
     public static int rollDice() {
         int maxEye = 6;
@@ -30,9 +42,9 @@ public class Dice {
         int roll1 = rollDice();
         int roll2 = rollDice();
 
-       /* int rollTotal = roll1 + roll2;
+       int rollTotal = roll1 + roll2;
 
-        System.out.println("Total roll: " + rollTotal);*/
+        //System.out.println("Total roll: " + rollTotal);
 
         return roll1 + roll2;
     }

@@ -4,6 +4,8 @@ public class Game {
         String playername1 = "";
         String playername2 = "";
         Scanner in = new Scanner(System.in);
+        Dice dicetotal1 = new Dice();
+        Dice dicetotal2 = new Dice();
         Account account1 = new Account();
         Account account2 = new Account();
         Board piece1 = new Board();
@@ -19,6 +21,7 @@ public class Game {
             System.out.println("please write 1 or 2");
             in.nextLine();
         }
+
         int playerType = in.nextInt();
         switch (playerType) {
             case 1 -> {
@@ -32,10 +35,10 @@ public class Game {
             if (i < 100) {
                 if (i % 2 == 1) {
 
-                    playTurn(account1, piece1, player1);
+                    playTurn(dicetotal1, account1, piece1, player1);
                 }
                 else {
-                    playTurn(account2, piece2, player2);
+                    playTurn(dicetotal2, account2, piece2, player2);
                 }
             }
             if (account2.winCondition()) {
@@ -52,12 +55,12 @@ public class Game {
         }
     }
 
-    private static void playTurn(Account account, Board piece, Player player) {
+    private static void playTurn(Dice dicetotal, Account account, Board piece, Player player) {
         //player turn
         System.out.println(player.getPlayerName() + "'s turn");
-        int eyesum = Dice.diceTotal();
-        piece.ChangeBoardPosition(eyesum);
-        System.out.println("rolled " + "" + eyesum);
+        dicetotal.setDiceTotal(Dice.diceTotal());
+        piece.ChangeBoardPosition(dicetotal.getDiceTotal());
+        System.out.println("rolled " + "" + dicetotal.getDiceTotal());
         System.out.println("Landed on " + piece.GetFieldName() + " giving " + "" + piece.GetFieldChange());
         account.changeBalance(piece.GetFieldChange());
         while (piece.getboardPosition() == 10) {
@@ -65,7 +68,7 @@ public class Game {
             System.out.println("Rolling again..");
             System.out.println(" ");
             //rolling
-            piece.ChangeBoardPosition(eyesum);
+            piece.ChangeBoardPosition(dicetotal.getDiceTotal());
             account.changeBalance(piece.GetFieldChange());
             if (piece.getboardPosition() != 10) {
                 System.out.println("Landed on " + piece.GetFieldName() + " giving " + "" + piece.GetFieldChange());
@@ -84,10 +87,10 @@ public class Game {
         String firstName = in.nextLine();
         first.setPlayerName(firstName);
         if (first.playerType == 2){
-        System.out.println("Write player1's name");
+        System.out.println("Write player 1's name");
         }
         if (first.playerType == 1){
-            System.out.println("Write player2's name");
+            System.out.println("Write player 2's name");
         }
         while (!in.hasNextLine()){
             System.out.println("please write 1 or 2");

@@ -12,9 +12,10 @@ public class Board {
     }
 
     public int getboardPosition() {
-        if (boardPosition == 0){
-            boardPosition = 2;
-        }
+        //if (boardPosition == 0){
+         //   boardPosition = 2;
+        //}
+        //System.out.println("Board position: " + boardPosition);
         return boardPosition;
     }
 
