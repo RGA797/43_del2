@@ -1,6 +1,8 @@
 import java.util.Scanner;
+//Main class, that initializes, and executes the game.
 public class Game {
     public static void main(String[] args) {
+        //Initiating variables and creating objects for 2 players
         String playername1 = "";
         String playername2 = "";
         Scanner in = new Scanner(System.in);
@@ -14,29 +16,24 @@ public class Game {
         Player player2 = new Player(2, playername2);
         int i = 1;
 
+        //getting player information
         System.out.println("Are you player 1 or player 2?");
-
 
         while (!in.hasNextInt()) {
             System.out.println("please write 1 or 2");
             in.nextLine();
         }
-
         int playerType = in.nextInt();
 
         while (playerType < 1 || playerType > 2) {
             System.out.println("please write 1 or 2");
             playerType = in.nextInt();
         }
-
         switch (playerType) {
-            case 1 -> {
-                namePlayer(player1, player2);
+                case 1 -> namePlayer(player1, player2);
+                case 2 -> namePlayer(player2, player1);
             }
-            case 2 -> {
-                namePlayer(player2, player1);
-            }
-        }
+
         while ((!account1.winCondition()) && (!account2.winCondition())) {
             if (i < 100) {
                 if (i % 2 == 1) {
@@ -58,11 +55,10 @@ public class Game {
                 break;
             }
             i++;
-        } n
+        }
     }
-
+    //this keeps track of what happens during a turn, given the object instances
     private static void playTurn(Dice dicetotal, Account account, Board piece, Player player) {
-        //player turn
         System.out.println(player.getPlayerName() + "'s turn");
         dicetotal.setDiceTotal(Dice.diceTotal());
         piece.updateBoardPosition(dicetotal.getDiceTotal());
@@ -85,6 +81,8 @@ public class Game {
         System.out.println("Turn ended with: " + "" + account.getTotalBalance());
         System.out.println(" ");
     }
+
+    //this sets a playerName, keeping track of the order of input
     private static void namePlayer(Player first, Player last) {
         Scanner in = new Scanner(System.in);
         System.out.println("Write your name");
@@ -94,12 +92,15 @@ public class Game {
         }
         String firstName = in.nextLine();
         first.setPlayerName(firstName);
+
         if (first.playerType == 2){
         System.out.println("Write player 1's name");
         }
+
         if (first.playerType == 1){
             System.out.println("Write player 2's name");
         }
+
         while (!in.hasNextLine()){
             System.out.println("please write 1 or 2");
             in.nextLine();

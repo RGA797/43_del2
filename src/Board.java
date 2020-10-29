@@ -1,4 +1,7 @@
-
+//This class keeps track of 3 arrays describing the properties of a board of 11 positions.
+//An instance variable (board position) keeps track of a pieces position on the board, and can change with a given value.
+//Boardposition resets if it goes over the boards boundaries
+//As these arrays have index 0-10, we use an arrayadaptor to translate between boardPosition and the respective index
 public class Board {
     int arrayadaptor = 2;
     int boardPosition;
@@ -12,10 +15,6 @@ public class Board {
     }
 
     public int getboardPosition() {
-        //if (boardPosition == 0){
-         //   boardPosition = 2;
-        //}
-        //System.out.println("Board position: " + boardPosition);
         return boardPosition;
     }
 
