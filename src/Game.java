@@ -64,17 +64,22 @@ public class Game {
     }
     //this keeps track of what happens during a turn, given the object instances
     private static void playTurn(Dice dicetotal, Account account, Board piece, Player player) {
+        Scanner in = new Scanner(System.in);
         System.out.println(player.getPlayerName() + "'s turn");
+        System.out.println("Press enter to roll:");
+        in.nextLine();
         dicetotal.setDiceTotal(Dice.diceTotal());
         piece.updateBoardPosition(dicetotal.getDiceTotal());
-        System.out.println("rolled " + "" + dicetotal.getDiceTotal());
-        System.out.println("Landed on " + piece.getFieldName() + " giving " + "" + piece.getFieldValue());
+        System.out.println("You rolled " + "" + dicetotal.getDiceTotal());
+        System.out.println("Landed on " + piece.getFieldName() + ", your points are changed by " + "" + piece.getFieldValue());
         System.out.println(piece.getFieldText());
         account.updateBalance(piece.getFieldValue());
         while (piece.getboardPosition() == 10) {
-            System.out.println("Current money on werewall: " + "" + account.getTotalBalance());
-            System.out.println("Rolling again..");
-            System.out.println(" ");
+            System.out.println("Current points on the Werewall: " + "" + account.getTotalBalance() + ", you get an extra turn");
+            System.out.println("Press enter to roll:");
+            in.nextLine();
+            //System.out.println("Rolling again..");
+            //System.out.println(" ");
             //rolling
             piece.updateBoardPosition(dicetotal.getDiceTotal());
             account.updateBalance(piece.getFieldValue());
