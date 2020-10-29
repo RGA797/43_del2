@@ -58,7 +58,7 @@ public class Game {
                 break;
             }
             i++;
-        }
+        } n
     }
 
     private static void playTurn(Dice dicetotal, Account account, Board piece, Player player) {

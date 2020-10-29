@@ -38,7 +38,7 @@ public class Board {
         return BalanceList[getboardPosition() - arrayadaptor];
     }
     public String getFieldText() {
-        final String[] fieldNameList = new String[]{
+        final String[] fieldTextList = new String[]{
                 "You find an abandoned tower full of valuables and equipment.",
                 "You landed in a massive crater, you must expend great effort to get out.",
                 "You reach a gilded palace, it's wealthy inhabitants graciously supply you with provisions.",
@@ -51,7 +51,7 @@ public class Board {
                 "You fall into a pit, you must struggle to get out.",
                 "You discover an abandoned gold mine, it's filled with gold, you're rich!"
         };
-        return fieldNameList[getboardPosition() - arrayadaptor];
+        return fieldTextList[getboardPosition() - arrayadaptor];
     }
 
 }
