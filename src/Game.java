@@ -13,16 +13,21 @@ public class Game {
         int i = 1;
 
         System.out.println("Are you player 1 or player 2?");
+
+
+        while (!in.hasNextInt()) {
+            System.out.println("please write 1 or 2");
+            in.nextLine();
+        }
         int playerType = in.nextInt();
         switch (playerType) {
             case 1 -> {
-                namePlayer(player1,player2);
+                namePlayer(player1, player2);
             }
             case 2 -> {
                 namePlayer(player2, player1);
             }
         }
-
         while ((!account1.winCondition()) && (!account2.winCondition())) {
             if (i < 100) {
                 if (i % 2 == 1) {
@@ -45,12 +50,7 @@ public class Game {
             }
             i++;
         }
-        System.out.println("Play again?");
-        if (in.nextLine().
-                equals("Yes"))
-            //restart game?
-            System.exit(0);
-        }
+    }
 
     private static void playTurn(Account account, Board piece, Player player) {
         //player turn
@@ -76,16 +76,25 @@ public class Game {
     }
     private static void namePlayer(Player first, Player last) {
         Scanner in = new Scanner(System.in);
-
         System.out.println("Write your name");
-        first.setPlayerName(in.nextLine());
+        while (!in.hasNextLine()){
+            System.out.println("invalid input");
+            in.nextLine();
+        }
+        String firstName = in.nextLine();
+        first.setPlayerName(firstName);
         if (first.playerType == 2){
         System.out.println("Write player1's name");
         }
         if (first.playerType == 1){
             System.out.println("Write player2's name");
         }
-        last.setPlayerName(in.nextLine());
+        while (!in.hasNextLine()){
+            System.out.println("please write 1 or 2");
+            in.nextLine();
+        }
+        String lastName = in.nextLine();
+        last.setPlayerName(lastName);
     }
 }
 
