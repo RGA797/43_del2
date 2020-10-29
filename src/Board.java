@@ -37,5 +37,22 @@ public class Board {
         final int[] BalanceList = new int[]{250, -100, 100 , -20, 180, 0, -70, 60, -80, -50, 650};
         return BalanceList[getboardPosition() - arrayadaptor];
     }
+    public String getFieldText() {
+        final String[] fieldNameList = new String[]{
+                "You find an abandoned tower full of valuables and equipment.",
+                "You landed in a massive crater, you must expend great effort to get out.",
+                "You reach a gilded palace, it's wealthy inhabitants graciously supply you with provisions.",
+                "You are left with no other option but to travel through the cold and barren desert.",
+                "You enter a fortified city, within the safety of the tall walls you gather your strength and supplies.",
+                "You come across a monastery, you're safe but unfortunately there's nothing to gain here.",
+                "You travel through a black cave in which you get lost.",
+                "Traveling over the mountains you find a series of huts, the locals are happy to help any way they can.",
+                "You are forced to cross the dreaded Werewall, you must run for your life!",
+                "You fall into a pit, you must struggle to get out.",
+                "You discover an abandoned gold mine, it's filled with gold, you're rich!"
+        };
+        return fieldNameList[getboardPosition() - arrayadaptor];
+    }
+
 }
 

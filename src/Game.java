@@ -68,6 +68,7 @@ public class Game {
         piece.updateBoardPosition(dicetotal.getDiceTotal());
         System.out.println("rolled " + "" + dicetotal.getDiceTotal());
         System.out.println("Landed on " + piece.getFieldName() + " giving " + "" + piece.getFieldValue());
+        System.out.println(piece.getFieldText());
         account.updateBalance(piece.getFieldValue());
         while (piece.getboardPosition() == 10) {
             System.out.println("Current money on werewall: " + "" + account.getTotalBalance());
@@ -78,6 +79,7 @@ public class Game {
             account.updateBalance(piece.getFieldValue());
             if (piece.getboardPosition() != 10) {
                 System.out.println("Landed on " + piece.getFieldName() + " giving " + "" + piece.getFieldValue());
+                System.out.println(piece.getFieldText());
             }
         }
         System.out.println("Turn ended with: " + "" + account.getTotalBalance());
