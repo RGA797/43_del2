@@ -23,6 +23,12 @@ public class Game {
         }
 
         int playerType = in.nextInt();
+
+        while (playerType < 1 || playerType > 2) {
+            System.out.println("please write 1 or 2");
+            playerType = in.nextInt();
+        }
+
         switch (playerType) {
             case 1 -> {
                 namePlayer(player1, player2);
