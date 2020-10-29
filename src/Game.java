@@ -18,17 +18,22 @@ public class Game {
 
         //getting player information
         System.out.println("Are you player 1 or player 2?");
-
+        
+        // Checks if the value is an int
         while (!in.hasNextInt()) {
             System.out.println("please write 1 or 2");
             in.nextLine();
         }
         int playerType = in.nextInt();
 
+        // Checks if the int is higher than 2 or lower than 1
         while (playerType < 1 || playerType > 2) {
             System.out.println("please write 1 or 2");
-            playerType = in.nextInt();
+            if (in.hasNextInt()) {
+                playerType = in.nextInt();
+            }
         }
+
         switch (playerType) {
                 case 1 -> namePlayer(player1, player2);
                 case 2 -> namePlayer(player2, player1);
