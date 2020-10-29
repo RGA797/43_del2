@@ -19,7 +19,7 @@ public class Board {
         return boardPosition;
     }
 
-    public void ChangeBoardPosition(int dicetotal) {
+    public void updateBoardPosition(int dicetotal) {
         int fieldmax = 12;
         int fieldreset = 11;
         setboardPosition(dicetotal + getboardPosition());
@@ -28,13 +28,13 @@ public class Board {
         }
     }
 
-    public String GetFieldName() {
+    public String getFieldName() {
         final String[] fieldNameList = new String[]{"Tower", "Crater", "Palace gates", "Cold Desert", "Walled city", "Monastery", "Black cave", "Huts in the mountain", "The Werewall", "The pit", "Goldmine"};
         return fieldNameList[getboardPosition() - arrayadaptor];
     }
 
-    public int GetFieldChange() {
-        final int[] BalanceList = new int[]{250, -100, 100 ,  -20, 180, 0, -70, 60, -80, -50, 650};
+    public int getFieldValue() {
+        final int[] BalanceList = new int[]{250, -100, 100 , -20, 180, 0, -70, 60, -80, -50, 650};
         return BalanceList[getboardPosition() - arrayadaptor];
     }
 }

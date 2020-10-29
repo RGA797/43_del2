@@ -65,19 +65,19 @@ public class Game {
         //player turn
         System.out.println(player.getPlayerName() + "'s turn");
         dicetotal.setDiceTotal(Dice.diceTotal());
-        piece.ChangeBoardPosition(dicetotal.getDiceTotal());
+        piece.updateBoardPosition(dicetotal.getDiceTotal());
         System.out.println("rolled " + "" + dicetotal.getDiceTotal());
-        System.out.println("Landed on " + piece.GetFieldName() + " giving " + "" + piece.GetFieldChange());
-        account.changeBalance(piece.GetFieldChange());
+        System.out.println("Landed on " + piece.getFieldName() + " giving " + "" + piece.getFieldValue());
+        account.updateBalance(piece.getFieldValue());
         while (piece.getboardPosition() == 10) {
             System.out.println("Current money on werewall: " + "" + account.getTotalBalance());
             System.out.println("Rolling again..");
             System.out.println(" ");
             //rolling
-            piece.ChangeBoardPosition(dicetotal.getDiceTotal());
-            account.changeBalance(piece.GetFieldChange());
+            piece.updateBoardPosition(dicetotal.getDiceTotal());
+            account.updateBalance(piece.getFieldValue());
             if (piece.getboardPosition() != 10) {
-                System.out.println("Landed on " + piece.GetFieldName() + " giving " + "" + piece.GetFieldChange());
+                System.out.println("Landed on " + piece.getFieldName() + " giving " + "" + piece.getFieldValue());
             }
         }
         System.out.println("Turn ended with: " + "" + account.getTotalBalance());

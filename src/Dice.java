@@ -42,7 +42,7 @@ public class Dice {
         int roll1 = rollDice();
         int roll2 = rollDice();
 
-       int rollTotal = roll1 + roll2;
+       //int rollTotal = roll1 + roll2;
 
         //System.out.println("Total roll: " + rollTotal);
 

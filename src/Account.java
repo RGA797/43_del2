@@ -6,7 +6,7 @@ public class Account {
         this.totalBalance = 1000;
         this.balanceToWin = 3000;
     }
-    public void changeBalance(int change){
+    public void updateBalance(int change){
         totalBalance = totalBalance + change;
 
         if (totalBalance < 0) {
