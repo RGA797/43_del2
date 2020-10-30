@@ -35,9 +35,12 @@ public class Game {
         }
 
         switch (playerType) {
-                case 1 -> namePlayer(player1, player2);
-                case 2 -> namePlayer(player2, player1);
+                case 1:namePlayer(player1, player2);
+                break;
+                case 2: namePlayer(player2, player1);
+                break;
             }
+
 
         while ((!account1.winCondition()) && (!account2.winCondition())) {
             if (i < 100) {
