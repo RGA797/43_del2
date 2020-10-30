@@ -21,14 +21,14 @@ public class Game {
         
         // Checks if the value is an int
         while (!in.hasNextInt()) {
-            System.out.println("please write 1 or 2");
+            System.out.println("Please write 1 or 2");
             in.nextLine();
         }
         int playerType = in.nextInt();
 
         // Checks if the int is higher than 2 or lower than 1
         while (playerType < 1 || playerType > 2) {
-            System.out.println("please write 1 or 2");
+            System.out.println("Please write 1 or 2");
             if (in.hasNextInt()) {
                 playerType = in.nextInt();
             }
@@ -112,7 +112,7 @@ public class Game {
         }
 
         while (!in.hasNextLine()){
-            System.out.println("please write 1 or 2");
+            System.out.println("Please write 1 or 2");
             in.nextLine();
         }
         String lastName = in.nextLine();
